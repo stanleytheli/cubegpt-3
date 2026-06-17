@@ -13,7 +13,7 @@ All 3D renders in this project made using a 3D renderer I built, by hand.
 
 So does the AI work? Yes! For instance, it finds the following 18-move solution to the cube pictured above:
 
-[video-placeholder]
+https://github.com/user-attachments/assets/94e74997-3954-4ba1-8078-74cb5c051ca7
 
 ### Previous Work
 
@@ -73,8 +73,12 @@ While doing these experiments, I found a small number of states that couldn't be
 
 ## Future Work
 
-I plan to update this project as I scale and investigate path finetuning methods further. I would go so far as to refer to training on non-paths as "pretraining" and PFT as "posttraining," but then I think the LARP would get ridiculous, even for me. There are also other ideas I plan to experiment with, such as recurrence from previous states.
+My takeaway from this is that we desperately need better evals. It would also be great to understand what about path finetuning particularly induces solving capability, and to see if we could purposefully boost that. My current interpretation is that training on unrelated samples gives models a global sense of Cube structure, but no local one --- there's no guarantee they'll rank nearby states sensibly. PFT induces that. 
+
+I plan to update this project as I scale and investigate PFT further. I would go so far as to refer to training on non-paths as "pretraining" and PFT as "posttraining," but then I think the LARP would get ridiculous, even for me. There are also other ideas I plan to experiment with, such as recurrence from previous states.
 
 ## More Solve Videos
 
-[placeholder-videos]
+https://github.com/user-attachments/assets/2d0622b6-e8c6-491b-9ed6-10db0aa6d76d
+
+https://github.com/user-attachments/assets/e897c896-9766-42a2-85f4-63b583f3c305
