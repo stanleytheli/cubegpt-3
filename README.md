@@ -13,7 +13,7 @@ All 3D renders in this project made using a 3D renderer I built, by hand.
 
 So does the AI work? Yes! For instance, it finds the following 18-move solution to the cube pictured above:
 
-https://github.com/user-attachments/assets/94e74997-3954-4ba1-8078-74cb5c051ca7
+https://github.com/user-attachments/assets/dd51b826-f864-45e7-99cc-ccca08a05a2e
 
 ### Previous Work
 
@@ -79,6 +79,6 @@ I plan to update this project as I scale and investigate PFT further. I would go
 
 ## More Solve Videos
 
-https://github.com/user-attachments/assets/2d0622b6-e8c6-491b-9ed6-10db0aa6d76d
+https://github.com/user-attachments/assets/d71554ae-2c3d-4c95-9c00-17c6c1f9edbc
 
-https://github.com/user-attachments/assets/e897c896-9766-42a2-85f4-63b583f3c305
+https://github.com/user-attachments/assets/bf7bce2e-1663-4972-af68-6b5380861241
