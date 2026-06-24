@@ -43,7 +43,7 @@ We also develop our training methods to encourage better convergence. Here's a l
 
 ![](images/longer_training_run.webp)
 
-When we account for a predicted residual loss value, and then smooth logarithmically, we find a beautiful power law. 
+When we account for a predicted residual loss value, and then smooth logarithmically (avg. over all samples within 2/3 - 3/2 of a given point), we find a beautiful power law. 
 
 ![](data_analysis/output/out_sam_f15.png)
 
