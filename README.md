@@ -35,11 +35,17 @@ In order of being added:
 * **Gated MLP**: Old MLPs used to do f(x) = B(GeLU(Ax)) for matrices A, B. Gated MLPs do f(x) = C(Ax * SiLU(Bx)). Empirically shown to be better.
 * **Mixture of Experts (MoE)**: Deepseek V3-style, using explicitly tuned expert biases for load balancing. Significantly increases information capacity while barely slowing down the forward pass.
 
+Other GPU optimizations include moving matmuls to TF32 (degrades models surprisingly little while speeding up calculations ~1.5x) and simply upgrading hardware.
+
 The MoE models actually train a bit slower, which is expected given that their gradients can only flow through one expert at a time. However, when we train an 8 expert model for longer, we indeed see it’s capable of reaching low loss. 
 
 We also develop our training methods to encourage better convergence. Here's a long training run with an 8 expert model. Using initial batch size 256, it appears to saturate at 100 million samples; I call this CubeGPT-3-8A1-t100m. Increasing batch size to 4096 (also upgraded my hardware!) gives stabler gradients and measurements, letting us achieve a lower-loss convergence at 300 million samples; I call that model CubeGPT-3-8A1-t300m.
 
 ![](images/longer_training_run.webp)
+
+When we account for a predicted residual loss value, and then smooth logarithmically, we find a beautiful power law. 
+
+![](data_analysis/output/out_sam_f15.png)
 
 Using these interventions, we see that CubeGPT-3 is already a step change in capabilities above our old best models, while maintaining similar inference speed due to holding the number of active parameters constant.
 
